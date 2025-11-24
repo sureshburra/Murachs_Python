@@ -1,3 +1,7 @@
+from custom_logger import CustomLogger
+
+logger = CustomLogger().get_logger()
+
 class Employee:
     def __init__(self, role, dept, salary):
         self.role = role
@@ -5,9 +9,9 @@ class Employee:
         self.salary = salary
 
     def showDetails(self):
-        print("role =", self.role)
-        print("dept =", self.dept)
-        print("salary =", self.salary)
+        logger.info(f"role = {self.role}")
+        logger.info(f"dept = {self.dept}")
+        logger.info(f"salary = {self.salary}")
 
 
 class Engineer(Employee):
@@ -22,3 +26,10 @@ e1.showDetails()
 
 eng1 = Engineer("John Doe", 30)
 eng1.showDetails()
+
+eng2 = Engineer("Suresh Burra", 40)
+eng2.showDetails()
+
+eng3 = Engineer("Ravi", 50)
+eng3.showDetails()
+
