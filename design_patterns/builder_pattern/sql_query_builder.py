@@ -30,7 +30,8 @@ class SQLQueryBuilder:
             query += f" WHERE {' AND '.join(self._conditions)}"
 
         if self._order_by:
-            query += f" ORDER BY {self._order_by[0]} {'DESC' if self._order_by[1] else 'ASC'}"
+            query += f" ORDER BY {self._order_by[0]} \
+            {'DESC' if self._order_by[1] else 'ASC'}"
 
         if self._limit:
             query += f" LIMIT {self._limit}"
