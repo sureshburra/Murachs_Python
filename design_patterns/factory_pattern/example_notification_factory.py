@@ -1,25 +1,31 @@
 from abc import ABC, abstractmethod
 
+
 class Notification(ABC):
     @abstractmethod
     def send(self, message):
         pass
 
+
 class EmailNotification(Notification):
     def send(self, message):
         return f"Sending email: {message}"
+
 
 class SMSNotification(Notification):
     def send(self, message):
         return f"Sending SMS: {message}"
 
+
 class PushNotification(Notification):
     def send(self, message):
         return f"Sending push notification: {message}"
 
+
 class SlackNotification(Notification):
     def send(self, message):
         return f"Sending Slack message: {message}"
+
 
 class NotificationFactory:
     _notifications = {
@@ -39,6 +45,7 @@ class NotificationFactory:
     @classmethod
     def register_notification(cls, name, notification_class):
         cls._notifications[name.lower()] = notification_class
+
 
 # Usage
 notifier = NotificationFactory.create_notification('email')

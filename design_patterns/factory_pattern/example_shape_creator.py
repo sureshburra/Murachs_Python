@@ -2,13 +2,16 @@ class Circle:
     def draw(self):
         print("Drawing a circle!")
 
+
 class Square:
     def draw(self):
         print("Drawing a square!")
 
+
 class Rectangle:
     def draw(self):
         print("Drawing a rectangle!")
+
 
 def shape_factory(shape_type):
     shapes = {
@@ -21,6 +24,6 @@ def shape_factory(shape_type):
     else:
         raise ValueError("unkown shape type")
 
+
 shape = shape_factory("square")
 shape.draw()  # Output: Drawing a square!
-
